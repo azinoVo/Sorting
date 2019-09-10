@@ -3,20 +3,24 @@
 # 2- Repeat the process with the 2nd smallest, 3rd smallest, etc.
 # You will need to pass
 # TO-DO: Complete the selection_sort() function below 
+
 def selection_sort( arr ):
     # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
+    for i in range(0, len(arr)-1):
+        min_index = i
         # TO-DO: find next smallest element
-        # (hint, can do in 3 loc) 
-             
+        # (hint, can do in 3 loc)
+        for n in range(i+1, len(arr)):
+            if arr[n] < arr[min_index]:
+                min_index = n
+      
         # TO-DO: swap
-
-
-
+        if min_index != i:
+            arr[i], arr[min_index] = arr[min_index], arr[i]
 
     return arr
+
+print(selection_sort([5, 1, 3, 2]))
 
 
 # TO-DO:  implement the Bubble Sort function below
