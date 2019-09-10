@@ -20,7 +20,7 @@ def selection_sort( arr ):
 
     return arr
 
-print(selection_sort([5, 1, 3, 2]))
+print(selection_sort([5, 1, 3, 2, 4]))
 
 
 # TO-DO:  implement the Bubble Sort function below
@@ -29,8 +29,14 @@ print(selection_sort([5, 1, 3, 2]))
 # The above process is repeated until we pass through the entire collection without performing a single swap. 
 # With each pass, the larger elements will “bubble” toward the right hand side of the collection.
 def bubble_sort( arr ):
+    for i in range(0, len(arr)-1):
+        for j in range(0, len(arr)-1-i):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
 
     return arr
+
+print(bubble_sort([3, 2, 1, 7, 4]))
 
 
 # STRETCH: implement the Count Sort function below
